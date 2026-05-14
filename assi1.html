@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Student Portfolio</title>
+
+    <!-- Internal CSS -->
+    <style>
+
+        /* External CSS Import */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background: linear-gradient(to right, #dfe9f3, #ffffff);
+            color:#333;
+        }
+
+        /* Header */
+        header{
+            background:#0d6efd;
+            color:white;
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo img{
+            width:60px;
+            height:60px;
+            border-radius:50%;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:20px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            font-weight:500;
+            padding:8px 12px;
+            transition:0.3s;
+        }
+
+        /* Hover Effect */
+        nav ul li a:hover{
+            background:white;
+            color:#0d6efd;
+            border-radius:5px;
+        }
+
+        /* Section Styling */
+        section{
+            padding:40px;
+        }
+
+        .profile{
+            display:flex;
+            align-items:center;
+            gap:30px;
+            flex-wrap:wrap;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .profile img{
+            width:180px;
+            border-radius:10px;
+        }
+
+        .profile-content h2{
+            margin-bottom:10px;
+            color:#0d6efd;
+        }
+
+        /* Skills */
+        .skills{
+            background:#f8f9fa;
+            margin-top:30px;
+            border-radius:10px;
+        }
+
+        .skills h2{
+            margin-bottom:15px;
+            color:#0d6efd;
+        }
+
+        .skills ul{
+            padding-left:20px;
+            line-height:2;
+        }
+
+        /* Table */
+        .projects h2{
+            margin-bottom:20px;
+            color:#0d6efd;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        table, th, td{
+            border:1px solid #ccc;
+        }
+
+        th{
+            background:#0d6efd;
+            color:white;
+        }
+
+        th, td{
+            padding:15px;
+            text-align:center;
+        }
+
+        tr:nth-child(even){
+            background:#f2f2f2;
+        }
+
+        /* Contact Form */
+        .contact{
+            margin-top:30px;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .contact h2{
+            margin-bottom:20px;
+            color:#0d6efd;
+        }
+
+        form{
+            display:flex;
+            flex-direction:column;
+        }
+
+        input, textarea{
+            margin-bottom:15px;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            font-size:16px;
+        }
+
+        button{
+            padding:12px;
+            border:none;
+            background:#0d6efd;
+            color:white;
+            font-size:16px;
+            border-radius:5px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#084298;
+        }
+
+        /* Footer */
+        footer{
+            background:#0d6efd;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:30px;
+        }
+
+        /* Responsive Layout */
+        @media(max-width:768px){
+
+            header{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            nav ul{
+                flex-direction:column;
+                margin-top:15px;
+            }
+
+            .profile{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            table{
+                font-size:14px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="College Logo">
+
+            <div>
+                <h2>KS Rangasamy College of Technology</h2>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Student Profile -->
+    <section id="profile">
+
+        <div class="profile">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="Student Photo">
+
+            <div class="profile-content">
+
+                <h2>Student Profile</h2>
+
+                <p><b>Name:</b> Madhumitha Devi Sri K</p>
+                <p><b>Course:</b> Master of Computer Applications (MCA)</p>
+                <p><b>College:</b> KS Rangasamy College of Technology </p>
+                <p><b>Email:</b> madhu@gmail.com</p>
+
+                <br>
+
+                <!-- Hyperlink -->
+                <a href="https://www.linkedin.com" target="_blank">
+                    Visit My LinkedIn Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+
+        <h2>Skills</h2>
+
+        <!-- List -->
+        <ul>
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript</li>
+            <li>React JS</li>
+            <li>Python Programming</li>
+            <li>MongoDB</li>
+            <li>UI/UX Design</li>
+        </ul>
+
+    </section>
+
+    <!-- Project Details Table -->
+    <section id="projects" class="projects">
+
+        <h2>Project Details</h2>
+
+        <table>
+
+            <tr>
+                <th>S.No</th>
+                <th>Project Name</th>
+                <th>Technology</th>
+                <th>Year</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Student Management System</td>
+                <td>Java, MySQL</td>
+                <td>2024</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Portfolio Website</td>
+                <td>HTML, CSS</td>
+                <td>2025</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Leave Portal</td>
+                <td>React, MongoDB</td>
+                <td>2025</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact">
+
+        <h2>Contact Form</h2>
+
+        <!-- Form -->
+        <form>
+
+            <input type="text" placeholder="Enter Your Name" required>
+
+            <input type="email" placeholder="Enter Your Email" required>
+
+            <input type="text" placeholder="Subject">
+
+            <textarea rows="5" placeholder="Enter Your Message"></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Student Portfolio | Designed using HTML & CSS</p>
+    </footer>
+
+</body>
+</html>
