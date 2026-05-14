@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Student Portfolio</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #0f172a;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #2563eb;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 80px 8%;
+            gap: 50px;
+        }
+
+        .hero {
+
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 80px 8%;
+            gap: 50px;
+
+            /* BACKGROUND IMAGE */
+
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.85),
+                    rgba(255, 255, 255, 0.85)),
+
+                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #2563eb;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .secondary-btn {
+            background: #0f172a;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 85%;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            color: #2563eb;
+            margin-bottom: 50px;
+        }
+
+        /* PROFILE */
+
+        .profile-box {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .profile-details p {
+            margin-bottom: 18px;
+            font-size: 18px;
+        }
+
+        .profile-right {
+            background: #eff6ff;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .profile-right h3 {
+            margin-bottom: 20px;
+            color: #2563eb;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-10px);
+        }
+
+        /* TABLE */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        th {
+            background: #2563eb;
+            color: white;
+            padding: 18px;
+        }
+
+        td {
+            padding: 18px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #eff6ff;
+        }
+
+        /* CONTACT */
+
+        .contact-container {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input,
+        textarea {
+            padding: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        form button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-box {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            Portfolio
+        </div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <div class="hero-text">
+
+            <h1 id="welcomeMessage">
+                Welcome Student
+            </h1>
+
+            <p>
+                MCA Student | Front-End Developer |
+                TypeScript Enthusiast |
+                Passionate About Modern Web Technologies
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="btn primary-btn" id="exploreBtn">
+                    Explore More
+                </button>
+
+                <button class="btn secondary-btn" id="completionBtn">
+                    Portfolio Status
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png">
+
+        </div>
+
+    </div>
+
+    <!-- PROFILE -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            Student Profile
+        </h2>
+
+        <div class="profile-box">
+
+            <div class="profile-details">
+
+                <p><strong>Name :</strong> Madhumitha Devi Sri K</p>
+
+                <p><strong>Department :</strong> MCA</p>
+
+                <p><strong>College :</strong>
+                    KS Rangasamy College of Technology
+                </p>
+
+                <p><strong>Email :</strong>
+                    madhu@gmail.com
+                </p>
+
+                <p><strong>Phone :</strong>
+                    9876543210
+                </p>
+
+            </div>
+
+            <div class="profile-right">
+
+                <h3>Career Objective</h3>
+
+                <p>
+                    Passionate about Full Stack Development,
+                    UI/UX Design, JavaScript, TypeScript,
+                    and building responsive modern websites.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
+
+        <div class="skills-grid" id="skillsContainer">
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Project Details
+        </h2>
+
+        <table>
+
+            <tr>
+                <th>Project Name</th>
+                <th>Technology</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Portfolio Website</td>
+                <td>HTML, CSS, TypeScript</td>
+                <td>Completed</td>
+            </tr>
+
+            <tr>
+                <td>Leave Management System</td>
+                <td>MERN Stack</td>
+                <td>Ongoing</td>
+            </tr>
+
+            <tr>
+                <td>IoT Voice Automation</td>
+                <td>NodeMCU</td>
+                <td>Completed</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Form
+        </h2>
+
+        <div class="contact-container">
+
+            <form id="contactForm">
+
+                <input type="text" id="name" placeholder="Enter Your Name">
+
+                <input type="email" id="email" placeholder="Enter Your Email">
+
+                <input type="text" id="phone" placeholder="Enter Phone Number">
+
+                <textarea rows="5" placeholder="Enter Message">
+                </textarea>
+
+                <button type="submit">
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Modern TypeScript Portfolio
+        </p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // DYNAMIC WELCOME MESSAGE
+
+        document.getElementById("welcomeMessage")
+            .innerHTML =
+            "Welcome Devi Sri to My Portfolio";
+
+
+
+        // BUTTON EVENTS
+
+        document.getElementById("exploreBtn")
+            .addEventListener("click", function () {
+
+                alert("Welcome to My Portfolio Website!");
+
+            });
+
+
+
+        // =================================================
+        // TYPESCRIPT CONCEPTS
+        // =================================================
+
+        /*
+            type StudentType = {
+                name:string;
+                department:string;
+                email:string;
+            }
+
+            let student:StudentType = {
+                name:"Suvetha",
+                department:"MCA",
+                email:"suvetha@gmail.com"
+            };
+
+            let skills:string[] = [
+                "HTML",
+                "CSS",
+                "TypeScript"
+            ];
+
+            let tupleData:[string, number] =
+            ["Portfolio",90];
+
+            let studentId:string | number;
+
+            function calculateCompletion(
+                completed:number,
+                total:number
+            ):number{
+
+                return (completed/total)*100;
+
+            }
+        */
+
+        // OBJECT TYPE
+
+        let student = {
+
+            name: "Madhumitha Devi Sri K",
+            department: "MCA",
+            email: "madhu@gmail.com"
+
+        };
+
+
+
+        // ARRAY
+
+        let skills = [
+
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "React JS",
+            "MongoDB"
+
+        ];
+
+
+
+        // TUPLE
+
+        let tupleData = [
+
+            "Portfolio Score",
+            95
+
+        ];
+
+
+
+        // UNION TYPE
+
+        let studentId = 101;
+
+        studentId = "MCA101";
+
+
+
+        // FUNCTION
+
+        function calculateCompletion(
+            completed,
+            total
+        ) {
+
+            return (completed / total) * 100;
+
+        }
+
+
+
+        let completion =
+            calculateCompletion(5, 6);
+
+
+
+        // DYNAMIC SKILLS
+
+        let skillOutput = "";
+
+        for (let i = 0; i < skills.length; i++) {
+
+            skillOutput += `
+
+                <div class="skill-card">
+
+                    <h3>${skills[i]}</h3>
+
+                    <p>
+                        Professional Skill
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+        document.getElementById("skillsContainer")
+            .innerHTML = skillOutput;
+
+
+
+        // COMPLETION BUTTON
+
+        document.getElementById("completionBtn")
+            .addEventListener("click", function () {
+
+                alert(
+                    "Portfolio Completion: "
+                    + completion + "%"
+                );
+
+            });
+
+
+
+        // FORM VALIDATION
+
+        function validateForm(event) {
+
+            event.preventDefault();
+
+            let name =
+                document.getElementById("name").value;
+
+            let email =
+                document.getElementById("email").value;
+
+            let phone =
+                document.getElementById("phone").value;
+
+
+
+            if (name === "") {
+
+                alert("Name is required");
+                return;
+
+            }
+
+            if (!email.includes("@")) {
+
+                alert("Enter valid email");
+                return;
+
+            }
+
+            if (phone.length != 10
+                || isNaN(phone)) {
+
+                alert(
+                    "Phone number must contain 10 digits"
+                );
+
+                return;
+
+            }
+
+            alert(
+                "Form Submitted Successfully!"
+            );
+
+        }
+
+        document.getElementById("contactForm")
+            .addEventListener("submit", validateForm);
+
+    </script>
+
+</body>
+
+</html>
